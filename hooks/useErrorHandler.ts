@@ -2,6 +2,7 @@ import { toast } from "sonner";
 
 const errorMessages: Record<string, string> = {
   "Invalid identifier or password": "Correo o contraseña incorrectos.",
+  "An unexpected error occurred": "Correo o contraseña incorrectos.",
   "Email or Username are already taken":
     "El correo electrónico o nombre de usuario ya están en uso",
 };

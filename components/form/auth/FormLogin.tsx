@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { Fragment, useState } from "react";
 import { toast } from "sonner";
 import { signIn } from "next-auth/react";
+import { Input, Label } from "@/components/ui/form";
 
 export default function FormLogin() {
   const router = useRouter();
@@ -46,7 +47,6 @@ export default function FormLogin() {
       toast.success("¡Inicio de sesión exitoso!");
       router.push("/account");
     } catch (error) {
-      console.log(error);
       setIsLoading(false);
       handleRejection(error);
     }
@@ -109,36 +109,26 @@ export default function FormLogin() {
           <div className="h-[1px] w-full bg-secondary" />
         </div>
         <div className="flex flex-col gap-3">
-          <label htmlFor="email" className="text-xs text-secondary">
-            Correo electrónico
-          </label>
-          <input
-            {...register("email")}
+          <Label htmlFor="email">Correo electrónico</Label>
+          <Input
+            register={register("email")}
             type="text"
             id="email"
             placeholder="ledbeey@gmail.com"
-            className="py-2 px-3 rounded-full shadow-sm"
+            errors={errors.email}
+            message={errors.email?.message}
           />
-          {errors.email && (
-            <p className="text-[10px] text-red-500">{errors.email?.message}</p>
-          )}
         </div>
         <div className="flex flex-col gap-3">
-          <label htmlFor="password" className="text-xs text-secondary">
-            Contraseña
-          </label>
-          <input
-            {...register("password")}
+          <Label htmlFor="password">Contraseña</Label>
+          <Input
+            register={register("password")}
             type="password"
             id="password"
             placeholder="Introduce tu contraseña"
-            className="py-2 px-3 rounded-full shadow-sm"
+            errors={errors.password}
+            message={errors.password?.message}
           />
-          {errors.password && (
-            <p className="text-[10px] text-red-500">
-              {errors.password?.message}
-            </p>
-          )}
         </div>
         <button
           type="submit"

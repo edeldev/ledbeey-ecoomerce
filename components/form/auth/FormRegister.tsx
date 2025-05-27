@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
@@ -12,6 +12,7 @@ import { signUpWithCredential } from "@/services/auth";
 import { toast } from "sonner";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
+import { Input, Label } from "@/components/ui/form";
 
 export default function FormRegister() {
   const { handleRejection } = useErrorHandler();
@@ -55,80 +56,58 @@ export default function FormRegister() {
   };
 
   return (
-    <>
+    <Fragment>
       <form
         onSubmit={handleSubmit(onRegisterWithCredential)}
-        className="flex flex-col mt-16 gap-5 "
+        className="flex flex-col mt-16 gap-5"
       >
         <h2 className="text-lg font-semibold">Crear una cuenta</h2>
         <div className="flex flex-col gap-3">
-          <label htmlFor="username" className="text-xs text-secondary">
-            Nombre
-          </label>
-          <input
-            {...register("username")}
+          <Label htmlFor="username">Nombre</Label>
+          <Input
+            register={register("username")}
             id="username"
             type="text"
             placeholder="Ej. Edel Ballesteros"
-            className="py-2 px-3 rounded-full shadow-sm text-sm"
+            errors={errors.username}
+            message={errors.username?.message}
           />
-          {errors.username && (
-            <p className="text-[10px] text-red-500">
-              {errors.username?.message}
-            </p>
-          )}
         </div>
 
         <div className="flex flex-col gap-3">
-          <label htmlFor="email" className="text-xs text-secondary">
-            Correo electrónico
-          </label>
-          <input
-            {...register("email")}
+          <Label htmlFor="email">Correo electrónico</Label>
+          <Input
+            register={register("email")}
             type="email"
             id="email"
             placeholder="ledbeey@gmail.com"
-            className="py-2 px-3 rounded-full shadow-sm text-sm"
+            errors={errors.email}
+            message={errors.email?.message}
           />
-          {errors.email && (
-            <p className="text-[10px] text-red-500">{errors.email?.message}</p>
-          )}
         </div>
 
         <div className="flex flex-col gap-3">
-          <label htmlFor="password" className="text-xs text-secondary">
-            Contraseña
-          </label>
-          <input
-            {...register("password")}
+          <Label htmlFor="password">Contraseña</Label>
+          <Input
+            register={register("password")}
             type="password"
             id="password"
             placeholder="Mínimo 8 caracteres"
-            className="py-2 px-3 rounded-full shadow-sm text-sm"
+            errors={errors.password}
+            message={errors.password?.message}
           />
-          {errors.password && (
-            <p className="text-[10px] text-red-500">
-              {errors.password?.message}
-            </p>
-          )}
         </div>
 
         <div className="flex flex-col gap-3">
-          <label htmlFor="confirm-password" className="text-xs text-secondary">
-            Confirmar contraseña
-          </label>
-          <input
-            {...register("confirmPassword")}
+          <Label htmlFor="confirm-password">Confirmar contraseña</Label>
+          <Input
+            register={register("confirmPassword")}
             type="password"
             id="confirm-password"
             placeholder="Vuelva a ingresar su contraseña"
-            className="py-2 px-3 rounded-full shadow-sm text-sm"
+            errors={errors.confirmPassword}
+            message={errors.confirmPassword?.message}
           />
-          {errors.confirmPassword && (
-            <p className="text-[10px] text-red-500">
-              {errors.confirmPassword?.message}
-            </p>
-          )}
         </div>
 
         <button
@@ -145,6 +124,6 @@ export default function FormRegister() {
           Iniciar sesión
         </Link>
       </div>
-    </>
+    </Fragment>
   );
 }
