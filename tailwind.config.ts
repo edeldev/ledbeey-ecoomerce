@@ -9,8 +9,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#1f2328",
+        secondary: "#59636e",
+        footer: "#151B23",
+        textFooter: "#818b98",
+        container: "#171717",
+        accountColor: "#F7F5F4",
+      },
+      screens: {
+        xs: "350px",
       },
     },
   },
