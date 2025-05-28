@@ -6,6 +6,10 @@
   font-family: var(--font-sora), sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sora), sans-serif;
 }
