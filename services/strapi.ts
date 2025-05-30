@@ -1,9 +1,7 @@
-import { BASE_URL } from "@/static/const";
+import { BASE_URL, STRAPI_TOKEN } from "@/static/const";
 
-const { STRAPI_TOKEN } = process.env;
-
-export async function home(url: string) {
-  const res = await fetch(`${BASE_URL}${url}`, {
+export async function query(url: string) {
+  const res = await fetch(`${BASE_URL}/api/${url}`, {
     headers: {
       Authorization: `Bearer ${STRAPI_TOKEN}`,
     },

@@ -1,6 +1,6 @@
-import { home } from "./home";
+import { query } from "./strapi";
 
 export async function getHomeInfo() {
-  const res = await home("home");
+  const res = await query("home");
   return res.data;
 }

@@ -8,7 +8,7 @@ import axios from "axios";
 
 export async function signInWithCredential(req: RequestSignInCredential) {
   try {
-    const response = await axios.post(`${BASE_URL}auth/local`, {
+    const response = await axios.post(`${BASE_URL}/api/auth/local`, {
       identifier: req.email,
       password: req.password,
     });
@@ -27,7 +27,7 @@ export async function signInWithCredential(req: RequestSignInCredential) {
 export async function signUpWithCredential(data: RequestSignUpCredential) {
   try {
     const response: ResponseAuth = await axios.post(
-      `${BASE_URL}auth/local/register`,
+      `${BASE_URL}/api/auth/local/register`,
       {
         username: data.username,
         email: data.email,
