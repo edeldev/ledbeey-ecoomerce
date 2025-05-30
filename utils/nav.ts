@@ -2,7 +2,7 @@ import { IconSearch, IconShoppingCart, IconUser } from "@tabler/icons-react";
 import { IIconItem, INavItem } from "./types";
 
 export const NAV_ITEMS: INavItem[] = [
-  { id: 1, text: "Todos los productos", href: "/" },
+  { id: 1, text: "Todos los productos", href: "/products/shop-all" },
   { id: 2, text: "Hombre", href: "/" },
   { id: 3, text: "Mujer", href: "/" },
 ];
