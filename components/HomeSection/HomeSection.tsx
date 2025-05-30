@@ -16,7 +16,7 @@ export const HomeSection = async () => {
       </div>
 
       <Button
-        href="/"
+        href="/category/clothes"
         size="md"
         color={{ from: "#000000", to: "#ffffff" }}
         text="text-black"
