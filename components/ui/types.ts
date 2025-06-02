@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface IShinyText {
   text: string;
   disabled?: boolean;
@@ -15,5 +17,10 @@ export interface IButton {
   };
   text?: string;
   hoverTextColor?: string;
+  className?: string;
+}
+
+export interface IContainer {
+  children: ReactNode;
   className?: string;
 }

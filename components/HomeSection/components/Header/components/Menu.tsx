@@ -19,7 +19,7 @@ export const Menu = ({ open, setOpen }: IMenu) => {
   }, [open]);
 
   return (
-    <nav className="fixed w-full h-[calc(100vh-80px)] bg-white px-5 sm:px-16 pt-32 overflow-auto flex flex-col z-10">
+    <nav className="fixed w-full h-[calc(100vh-80px)] bg-white px-5 sm:px-16 pt-32 overflow-auto flex flex-col z-20">
       <ul className="flex flex-col gap-3">
         {NAV_ITEMS.map((item) => (
           <li key={item.id}>

@@ -19,7 +19,7 @@ export default function AuthPage() {
   }, [pathname]);
 
   return (
-    <div className="min-h-[calc(100dvh-80px)] px-5 sm:px-16 flex justify-center items-center">
+    <div className="min-h-[calc(100dvh-80px)] px-5 sm:px-16 md:flex justify-center items-center">
       <div className="grid grid-cols-12 bg-[#F9F9F9] mt-20 md:mt-0 mb-10 md:mb-0 max-w-3xl md:h-[590px] overflow-hidden rounded-xl p-1 shadow-xl">
         <div className="col-span-12 md:col-span-6 p-5 overflow-auto h-full">
           <Image src={LOGO} alt="logo" className="w-[105px] h-auto" />
@@ -51,7 +51,7 @@ export default function AuthPage() {
           </AnimatePresence>
         </div>
 
-        <div className="col-span-12 md:col-span-6 relative">
+        <div className="col-span-12 md:col-span-6 hidden md:block relative">
           {isImageLoading && (
             <div className="absolute inset-0 animate-pulse bg-gray-300 rounded-xl md:rounded-none md:rounded-r-xl z-1" />
           )}

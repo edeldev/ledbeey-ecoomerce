@@ -19,7 +19,7 @@ export const Products = async ({ categoryId, title }: IProductComponent) => {
             key={product.slug}
             className="col-span-12 md:col-span-6 lg:col-span-4 flex flex-col gap-3"
           >
-            <Link href={`/products/${product.slug}`}>
+            <Link href={`/product/${product.slug}`}>
               <div className="h-[400px] overflow-hidden group relative bg-gray-100">
                 {product.images[0] && (
                   <Image
