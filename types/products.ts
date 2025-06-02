@@ -1,6 +1,8 @@
+import { BlocksContent } from "@strapi/blocks-react-renderer";
+
 export type TProductPage = {
   name: string;
-  description: string;
+  description: string | BlocksContent;
   slug: string;
   price: number;
   images: string[];
