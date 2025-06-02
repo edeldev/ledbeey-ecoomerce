@@ -1,5 +1,4 @@
 import { TProductPage } from "@/types/products";
-import { MouseEventHandler } from "react";
 
 export interface ITitleProduct {
   product: TProductPage;
@@ -21,7 +20,7 @@ export interface IModalImage {
 
 export interface IFeatureProduct {
   product: TProductPage;
-  handleOpenSizeGuide: MouseEventHandler<HTMLButtonElement>;
+  setActiveTab: (activeTab: string) => void;
 }
 
 export interface ITabsDetails {

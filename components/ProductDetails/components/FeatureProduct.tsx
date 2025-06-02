@@ -1,14 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { IconStarFilled } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { IFeatureProduct } from "./types";
 
-export const FeatureProduct = ({
-  product,
-  handleOpenSizeGuide,
-}: IFeatureProduct) => {
+export const FeatureProduct = ({ product, setActiveTab }: IFeatureProduct) => {
   const { price } = product;
   const sizes = ["XS", "S", "M", "L", "XL", "XXL"];
   const colors = [
@@ -25,13 +23,13 @@ export const FeatureProduct = ({
       <div className="space-y-4">
         <div className="flex justify-between items-center">
           <p className="uppercase text-xs font-bold">Tamaño</p>
-          <button
-            type="button"
-            onClick={handleOpenSizeGuide}
+          <Link
+            href="#size-guide"
+            onClick={() => setActiveTab("details")}
             className="text-xs underline"
           >
             Guía de tallas
-          </button>
+          </Link>
         </div>
         <div className="flex flex-wrap gap-2">
           {sizes.map((size) => {

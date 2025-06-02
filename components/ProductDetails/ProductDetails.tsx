@@ -18,15 +18,6 @@ export const ProductDetails = ({ product }: IProductDetails) => {
   const [isZoomOpen, setIsZoomOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("description");
 
-  const handleOpenSizeGuide = () => {
-    setActiveTab("details");
-
-    const element = document.getElementById("size-guide");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   useEffect(() => {
     if (isZoomOpen) {
       document.body.classList.add("overflow-hidden");
@@ -59,10 +50,7 @@ export const ProductDetails = ({ product }: IProductDetails) => {
             imagePreview={imagePreview}
             setIsZoomOpen={setIsZoomOpen}
           />
-          <FeatureProduct
-            product={product}
-            handleOpenSizeGuide={handleOpenSizeGuide}
-          />
+          <FeatureProduct product={product} setActiveTab={setActiveTab} />
         </div>
       </Container>
 
