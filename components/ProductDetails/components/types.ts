@@ -4,19 +4,19 @@ import { MouseEventHandler } from "react";
 export interface ITitleProduct {
   product: TProductPage;
   imagePreview: string;
-  setImagePreview: Function;
+  setImagePreview: (imagePreview: string) => void;
 }
 
 export interface IImagePreview {
   name: string;
   imagePreview: string;
-  setIsZoomOpen: Function;
+  setIsZoomOpen: (isZoomOpen: boolean) => void;
 }
 
 export interface IModalImage {
   isZoomOpen: boolean;
   imagePreview: string;
-  setIsZoomOpen: Function;
+  setIsZoomOpen: (isZoomOpen: boolean) => void;
 }
 
 export interface IFeatureProduct {
@@ -26,5 +26,5 @@ export interface IFeatureProduct {
 
 export interface ITabsDetails {
   activeTab: string;
-  setActiveTab: Function;
+  setActiveTab: (activeTab: string) => void;
 }
